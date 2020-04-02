@@ -76,11 +76,11 @@ template<typename T>
 VectorP<T>::VectorP(VectorP const& copy)
 	:capacity(copy.capacity)
 	, length(copy.length)
-	, buffer(static_cast<T*>(::operator new(sizeof(T)*copy.length)))
+	, buffer(static_cast<T*>(::operator new(sizeof(T)*copy.capacity)))
 {
 	for (size_t i = 0; i < copy.length; i++)
 	{
-		buffer[i] = copy.buffer[i];
+		push_back(copy.buffer[i]);
 	}
 }
 
