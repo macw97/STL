@@ -13,7 +13,7 @@ private:
 		Node(T value) : data(value), next(nullptr), prev(nullptr) {}
 		Node(T value, Node* n) : data(value), next(n), prev(nullptr) {}
 		Node(T value, Node* n, Node* p) : data(value), next(n), prev(p) {}
-    };
+        };
 	Node* head;
 	Node* tail;
 	void remove(Node* delNode);
