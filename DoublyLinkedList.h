@@ -181,11 +181,11 @@ void DoublyLinkedList<T>::deleteVal(T val)
 	Node* tmp=head;
 	if (head == nullptr)
 		return;
-    if (head->data == val)
+        if (head->data == val)
 	{
 		head = head->next;
 		head->prev = nullptr;
-		delete tmp;
+		remove(tmp);
 	}
 	else
 	{
@@ -196,7 +196,8 @@ void DoublyLinkedList<T>::deleteVal(T val)
 			{
 				next = tmp->next;
 				if(tmp->next!=nullptr)
-					tmp->next->prev=tmp->prev;
+					next->prev=tmp->prev;
+				remove(tmp);
 				tmp=next;
 			}
 			else
